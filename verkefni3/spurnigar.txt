@@ -1,0 +1,14 @@
+skilaverkefni 3 
+dæmi 2
+O(c^n)
+dæmi 3
+a)
+O(n)= Runtime stækar eftir sem talan n er ef n = 10 þá mun það taka 10 seconds
+og algorithm sem framkvæma einfalda lied í óröðuðm lista
+
+b)
+O(n2) = runtime stækar með töluni n*n ef n = 10 þá mun það taka 100 seconds
+og algorithm eins og selection sort
+
+c)
+O(log(n)) = stækar þegar er log(n) er stæri ens og o(log(1) = 1 second og ef n = 10 þá tekur það 2 seconds og svo stæri eftir að talan n stækar 
