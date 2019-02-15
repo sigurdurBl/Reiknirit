@@ -1,0 +1,14 @@
+1:)
+   A;)
+	þetta forrit fer í genum lista með tölum og fyrst birjum vil að núlstila listana og svo förum við í genum listan og og + með 1 í hvert skifti sem er farið í hann
+	og þángað til að tölunar verða sem uprunar listnum og svo förum við aftur í genum listan og + saman summa += countL[i] og þegar það er búið förum við aftur í genum 
+	og tökum við töuna sem er í stökunum og setjum hana svo á réttan stað í röðuðum listan
+   B;)
+	Counting sort
+
+   C;)
+	O(n+k)
+4;)
+  a;)
+	O(n)
+  
