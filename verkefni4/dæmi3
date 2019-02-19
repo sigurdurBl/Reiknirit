@@ -1,0 +1,15 @@
+from bisect import bisect_left
+def Search(a, x):
+    i = bisect_left(a, x)
+    if i != len(a) and a[i] == x:
+        return i
+    else:
+        return -1
+
+list  = [1, 2, 4,5,6,7,3, 8,9]
+tala = int(input("hvada tolu ertu ad leita af"))
+x = Search(list, tala)
+if tala == -1:
+    print("talan",tala, "er ekki i lista")
+else:
+    print("talan ", tala, "er a tessum stad i lista", x)
