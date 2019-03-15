@@ -28,20 +28,25 @@ class Vigur:
 
     # Fall sem skilar stefnuhorni
     def stefnuhorn(self):
-        return
-
+        if self.y < 0:
+            return -degrees(acos(self.x/self.lengd()))
+        else:
+            return degrees(acos(self.x/self.lengd()))
 
     # Fall sem tekur vigur sem parameter og skilar horni milli vigra
     def horn(self,v):
-        return
+        innfelldi = self.x*v.x+self.y*v.y
+        return abs(degrees(acos(innfelldi/(self.lengd() * v.lengd()))))
 
 
     # Fall sem tekur vigur sem parameter og skilar summu vigri
     def summa(self,v):
-        return
+        return Vigur(self.x +v.x,self.y + v.y)
 
 # Keyrsluforrit
-v1 = Vigur(3,4)
+v1 = Vigur(-4,4)
+
+
 v1.prenta()
 print("Lengd: ", v1.lengd())
 print("Halli: ", v1.halli())
@@ -50,7 +55,7 @@ vþ = v1.þvervigur()
 print("tvervigur: "),
 vþ.prenta()
 print("Stefnuhorn: ", v1.stefnuhorn())
-v2 = Vigur(-3,1)
+v2 = Vigur(1,1)
 print("Horn milli vigra: " , v2.horn(v1))
 v3 = v1.summa(v2)
 print("Summa: "),

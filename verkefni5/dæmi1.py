@@ -16,25 +16,41 @@ class Node:
 
 
     def printList(self):
-        if self.data is None:
-            print("ekki neit i lista")
+        print(self.data),
+        if self.nxt:
+            self.nxt.printList()
         else:
-            n = self.data
-            while(n):
-                print(n)
-                n = self.nxt
+            print("")
 
-        return
 
 
     def find(self, d):
-
-        return
+        if self.data == d:
+            return True
+        else:
+            if self.nxt:
+                return self.nxt.find(d)
+            else:
+                return False
 
 
 
     def delete(self, d):
-        return
+        # Ef aftasti hnútur
+        if self.data == d and self.nxt is None:
+            self.prv.nxt = None
+            self.prv = None
+            return True
+        elif self.data == d:
+            self.prv.nxt = self.nxt
+            self.nxt.prv = self.prv
+        # elif if self.data == d and self.nxt is None:
+        else:
+            if self.nxt:
+                return self.nxt.delete(d)
+            else:
+                return False
+
 
 class DLL: # DLL = Dobule Linked List
     def __init__(self):
@@ -42,7 +58,12 @@ class DLL: # DLL = Dobule Linked List
 
 
     def push(self,d):
-        return
+        if self.head:
+            temp_next = self.head
+            self.head = Node(d)
+            self.head.nxt = temp_next
+        else:
+            self.head = Node(d)
 
 
 
@@ -70,25 +91,33 @@ class DLL: # DLL = Dobule Linked List
 
     def delete(self, d):
         if self.head is None:
-            return -1
+            return False
         elif self.head.data == d:
             self.head = self.head.nxt
-            self.head.prv.nxt = None
-            self.head.prv = None
             return True
         else:
             return self.head.delete(d)
-
 dbl = DLL()
+dbl.append(5)
+dbl.append(6)
+dbl.append(1)
+dbl.printList()
+print(dbl.delete(1))
+dbl.printList()
+dbl.push(2)
+dbl.printList()
+print(dbl.find(12))
+"""
 dbl.append(5)           # 5
 dbl.append(7)           # 5 7
 dbl.push(1)             # 1 5 7
 dbl.push(0)             # 0 1 5 7
 dbl.append(10)          # 0 1 5 7 10
 dbl.printList()
-print()
-print(dbl.delete(10))   # 0 1 5 7
+
+dbl.push(7)
 dbl.printList()
-print(dbl.find(5))      # True
-print(dbl.find(10))     # False
-y = Node
+
+print(dbl.delete(7))
+dbl.printList()
+"""
